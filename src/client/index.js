@@ -1,8 +1,8 @@
-import postData from './js/app.js'
+import { postEntry } from './js/app'
 import './styles/style.scss'
 
 export {
-    postData
+    postEntry
 }
 
-document.getElementById('generate').addEventListener('click', postEntry)
+// document.getElementById('generate').addEventListener('click', postEntry)
