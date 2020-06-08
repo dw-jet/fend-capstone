@@ -1,6 +1,3 @@
-/* Global Variables */
-
-
 // Create a new date instance dynamically with JS
 let d = new Date();
 // Since month is zero based I added one to it
