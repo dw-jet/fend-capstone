@@ -92,4 +92,4 @@ const postEntry = () => {
   })
 }
 
-document.getElementById('generate').addEventListener('click', postEntry)
+export { postEntry }

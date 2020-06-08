@@ -1,7 +1,7 @@
 {
   "name": "weather-journal-app",
   "version": "1.0.0",
-  "description": "Udacity Project 3",
+  "description": "Udacity Capstone Project",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -11,16 +11,16 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node ./src/server/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dw-jet/weather-journal-app.git"
+    "url": "git+https://github.com/dw-jet/fend-capstone.git"
   },
   "author": "James Teitsworth",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dw-jet/weather-journal-app/issues"
+    "url": "https://github.com/dw-jet/fend-capstone/issues"
   },
-  "homepage": "https://github.com/dw-jet/weather-journal-app#readme"
+  "homepage": "https://github.com/dw-jet/fend-capstone#readme"
 }
