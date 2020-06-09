@@ -1,8 +1,7 @@
-import { postEntry } from './js/app'
+import { postEntry, setButtonClickHandler } from './js/app'
 import './styles/style.scss'
 
 export {
-    postEntry
+    postEntry,
+    setButtonClickHandler
 }
-
-// document.getElementById('generate').addEventListener('click', postEntry)

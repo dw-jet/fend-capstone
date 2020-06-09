@@ -4,12 +4,11 @@ let d = new Date();
 let newDate = d.getMonth()+1+'.'+ d.getDate()+'.'+ d.getFullYear();
 
 // Helper functions
-const constructURL = (zip) => {
-  const baseURL = 'http://api.openweathermap.org/data/2.5/weather?APPID=';
-  const apiKey = '[Enter your openweathermap API key here]';
-  const zipPart = '&q=' + zip + ',us';
-  const units = '&units=imperial'
-  return baseURL + apiKey + zipPart + units;
+const constructURL = (placeText) => {
+  const baseURL = 'http://api.geonames.org/search?';
+  const place = 'q=' + placeText + '&maxRows=10';
+  const apiKey = `&username=${process.env.GEONAMES_USER}`;
+  return baseURL + place + apiKey;
 };
 
 const clearInputsHelper = () => {
@@ -78,15 +77,17 @@ const postData = async (url = '', data = {}) => {
 const postEntry = () => {
   const zip = document.getElementById('zip').value;
   if (!zip) return;
-  const feelings = document.getElementById('feelings').value;
+  // const feelings = document.getElementById('feelings').value;
   weatherData(constructURL(zip))
     .then(function(data) {
-      postData('/entry', {
-        date: newDate,
-        feelings: feelings,
-        temp: data.main.temp})
-    .then(appData('/all'))
+      postData('http://localhost:3030/entry', data)
+    .then(appData('http://localhost:3030/all'))
   })
 }
 
+const setButtonClickHandler = () => {
+  document.getElementById('generate').addEventListener('click', postEntry);
+}
+
 export { postEntry }
+export { setButtonClickHandler }
